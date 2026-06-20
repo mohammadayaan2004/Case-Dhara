@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Shared background applied across every Activity and Fragment via
+    android:windowBackground in Theme.CaseDhara.
+    Gradient mirrors the splash screen: white base with a subtle navy top.
+-->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <gradient
+        android:startColor="@color/navy"
+        android:endColor="@color/white"
+        android:angle="135"
+        android:type="linear" />
+
+</shape>

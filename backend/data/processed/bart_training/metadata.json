@@ -1,0 +1,7 @@
+{
+  "total_records": 100,
+  "train_records": 90,
+  "val_records": 10,
+  "failed_pdfs": [],
+  "summary_method": "extractive+regex (no external API)"
+}

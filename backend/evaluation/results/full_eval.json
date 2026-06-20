@@ -1,0 +1,248 @@
+{
+  "readiness_score": 0.7725,
+  "all_checks_passed": false,
+  "checks_passed": "2/4",
+  "threshold_checks": [
+    {
+      "check": "Mapper Top-1 Accuracy",
+      "value": 0.829,
+      "threshold": 0.8,
+      "status": "PASS \u2713"
+    },
+    {
+      "check": "Mapper MRR",
+      "value": 0.8471,
+      "threshold": 0.85,
+      "status": "FAIL \u2717"
+    },
+    {
+      "check": "Summarizer ROUGE-1",
+      "value": 0.1364,
+      "threshold": 0.35,
+      "status": "FAIL \u2717"
+    },
+    {
+      "check": "Summarizer Field Coverage",
+      "value": 0.8875,
+      "threshold": 0.75,
+      "status": "PASS \u2713"
+    }
+  ],
+  "mapper": {
+    "summary": {
+      "total_cases": 1082,
+      "top1_accuracy": 0.829,
+      "top3_accuracy": 0.8669,
+      "top5_accuracy": 0.8697,
+      "mrr": 0.8471,
+      "latency_ms_mean": 0.19,
+      "latency_ms_p95": 0.26
+    },
+    "retrieval_tier_distribution": {
+      "1": 568,
+      "2": 512,
+      "3": 2
+    },
+    "confidence_stats_by_tier": {
+      "tier_1": {
+        "mean": 0.9999,
+        "std": 0.0017,
+        "min": 0.98,
+        "max": 1.0,
+        "count": 801
+      },
+      "tier_2": {
+        "mean": 0.6286,
+        "std": 0.2224,
+        "min": 0.1111,
+        "max": 0.85,
+        "count": 2495
+      },
+      "tier_3": {
+        "mean": 0.4402,
+        "std": 0.0166,
+        "min": 0.4154,
+        "max": 0.4659,
+        "count": 10
+      }
+    },
+    "accuracy_by_status": {
+      "mapped": {
+        "accuracy": 0.8283,
+        "count": 1025,
+        "correct": 849
+      },
+      "repealed": {
+        "accuracy": 0.8367,
+        "count": 49,
+        "correct": 41
+      },
+      "split": {
+        "accuracy": 0.875,
+        "count": 8,
+        "correct": 7
+      }
+    },
+    "failed_cases_sample": [
+      {
+        "query": "Repealed",
+        "expected_bns": "48",
+        "got_bns": "Repealed in BNS",
+        "status": "repealed",
+        "tier": 2
+      },
+      {
+        "query": "147",
+        "expected_bns": "191(2)",
+        "got_bns": "147",
+        "status": "mapped",
+        "tier": 1
+      },
+      {
+        "query": "148",
+        "expected_bns": "191(3)",
+        "got_bns": "148",
+        "status": "mapped",
+        "tier": 1
+      },
+      {
+        "query": "149",
+        "expected_bns": "190",
+        "got_bns": "149",
+        "status": "mapped",
+        "tier": 1
+      },
+      {
+        "query": "150",
+        "expected_bns": "189(6)",
+        "got_bns": "150",
+        "status": "mapped",
+        "tier": 1
+      },
+      {
+        "query": "151",
+        "expected_bns": "189(5)",
+        "got_bns": "151",
+        "status": "mapped",
+        "tier": 1
+      },
+      {
+        "query": "152",
+        "expected_bns": "195",
+        "got_bns": "152",
+        "status": "mapped",
+        "tier": 1
+      },
+      {
+        "query": "153",
+        "expected_bns": "192",
+        "got_bns": "153",
+        "status": "mapped",
+        "tier": 1
+      },
+      {
+        "query": "154",
+        "expected_bns": "193(1)",
+        "got_bns": "154",
+        "status": "mapped",
+        "tier": 1
+      },
+      {
+        "query": "155",
+        "expected_bns": "193(2)",
+        "got_bns": "155",
+        "status": "mapped",
+        "tier": 1
+      },
+      {
+        "query": "156",
+        "expected_bns": "193(3)",
+        "got_bns": "156",
+        "status": "mapped",
+        "tier": 1
+      },
+      {
+        "query": "157",
+        "expected_bns": "189(7)",
+        "got_bns": "157",
+        "status": "mapped",
+        "tier": 1
+      },
+      {
+        "query": "158",
+        "expected_bns": "189(8)(9)",
+        "got_bns": "158",
+        "status": "mapped",
+        "tier": 1
+      },
+      {
+        "query": "159",
+        "expected_bns": "194(1)",
+        "got_bns": "159",
+        "status": "mapped",
+        "tier": 1
+      },
+      {
+        "query": "160",
+        "expected_bns": "194(2)",
+        "got_bns": "160",
+        "status": "mapped",
+        "tier": 1
+      },
+      {
+        "query": "166",
+        "expected_bns": "198",
+        "got_bns": "166",
+        "status": "mapped",
+        "tier": 1
+      },
+      {
+        "query": "167",
+        "expected_bns": "201",
+        "got_bns": "167",
+        "status": "mapped",
+        "tier": 1
+      },
+      {
+        "query": "168",
+        "expected_bns": "202",
+        "got_bns": "168",
+        "status": "mapped",
+        "tier": 1
+      },
+      {
+        "query": "172",
+        "expected_bns": "206",
+        "got_bns": "172",
+        "status": "mapped",
+        "tier": 1
+      },
+      {
+        "query": "173",
+        "expected_bns": "207",
+        "got_bns": "173",
+        "status": "mapped",
+        "tier": 1
+      }
+    ],
+    "model_load_time_s": 3.284
+  },
+  "summarizer": {
+    "summary": {
+      "total_cases": 10,
+      "evaluated": 10,
+      "failed": 0,
+      "rouge1_f1": 0.1364,
+      "rouge2_f1": 0.0721,
+      "rougeL_f1": 0.1076,
+      "bleu4": 0.0033,
+      "section_extraction_recall": 1.0,
+      "field_coverage_ratio": 0.8875,
+      "latency_ms_mean": 24755.28,
+      "latency_ms_p95": 47492.98
+    },
+    "model_load_time_s": 5.895,
+    "failures_sample": []
+  },
+  "total_eval_time_s": 263.04
+}

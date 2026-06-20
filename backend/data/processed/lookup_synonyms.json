@@ -1,0 +1,40 @@
+{
+  "homicide": [
+    "murder",
+    "culpable homicide"
+  ],
+  "sexual assault": [
+    "rape",
+    "outraging modesty"
+  ],
+  "robbery": [
+    "dacoity",
+    "theft"
+  ],
+  "fraud": [
+    "cheating",
+    "forgery"
+  ],
+  "extortion": [
+    "extortion"
+  ],
+  "kidnapping": [
+    "kidnapping",
+    "abduction"
+  ],
+  "assault": [
+    "assault",
+    "hurt",
+    "grievous"
+  ],
+  "defamation": [
+    "defamation"
+  ],
+  "conspiracy": [
+    "criminal conspiracy"
+  ],
+  "bribery": [
+    "bribery",
+    "public servant"
+  ]
+}

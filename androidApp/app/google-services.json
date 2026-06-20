@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "522305537168",
+    "project_id": "case-dhara-b881d",
+    "storage_bucket": "case-dhara-b881d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:522305537168:android:88620930848369cb6fc415",
+        "android_client_info": {
+          "package_name": "com.casedhara"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQiV5IkwJcjLehQZ7OIPhEC2uo7f8lrRc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

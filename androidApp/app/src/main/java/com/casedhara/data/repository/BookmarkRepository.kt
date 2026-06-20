@@ -1,0 +1,66 @@
+package com.casedhara.data.repository
+
+import com.casedhara.data.local.dao.BookmarkDao
+import com.casedhara.data.local.entity.BookmarkEntity
+import com.casedhara.domain.model.Bookmark
+import com.casedhara.domain.model.MappingRecord
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
+import javax.inject.Inject
+import javax.inject.Singleton
+
+sealed class BookmarkAddResult {
+    data object Added : BookmarkAddResult()
+    data object AlreadyExists : BookmarkAddResult()
+}
+
+@Singleton
+class BookmarkRepository @Inject constructor(
+    private val dao: BookmarkDao,
+) {
+
+    fun observeBookmarks(): Flow<List<Bookmark>> =
+        dao.observeAll().map { list ->
+            list.map { e ->
+                Bookmark(
+                    id = e.id,
+                    ipcSection = e.ipcSection,
+                    bnsSection = e.bnsSection,
+                    ipcHeading = e.ipcHeading,
+                    bnsHeading = e.bnsHeading,
+                    status = e.status,
+                    savedAt = e.savedAt,
+                )
+            }
+        }
+
+    suspend fun addFromMapping(record: MappingRecord): BookmarkAddResult {
+        val existing = dao.findBySections(record.ipcSection, record.bnsSection)
+        if (existing != null) return BookmarkAddResult.AlreadyExists
+        dao.insert(
+            BookmarkEntity(
+                ipcSection = record.ipcSection,
+                bnsSection = record.bnsSection,
+                ipcHeading = record.ipcHeading,
+                bnsHeading = record.bnsHeading,
+                status = record.status,
+                savedAt = System.currentTimeMillis(),
+            ),
+        )
+        return BookmarkAddResult.Added
+    }
+
+    suspend fun remove(bookmark: Bookmark) {
+        dao.delete(
+            BookmarkEntity(
+                id = bookmark.id,
+                ipcSection = bookmark.ipcSection,
+                bnsSection = bookmark.bnsSection,
+                ipcHeading = bookmark.ipcHeading,
+                bnsHeading = bookmark.bnsHeading,
+                status = bookmark.status,
+                savedAt = bookmark.savedAt,
+            ),
+        )
+    }
+}
